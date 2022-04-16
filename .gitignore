@@ -1,3 +1,4 @@
+#ignorer les reglage de phpStorm
 /.idea/
 
 ###> symfony/framework-bundle ###
