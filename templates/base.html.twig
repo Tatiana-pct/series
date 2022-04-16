@@ -2,9 +2,10 @@
 <html lang="fr">
     {% include('inc/head.html.twig') %}
 <body>
+<div class="container">
 <header>
+    <h1><a href="{{ path('main_home') }}"><img src="{{ asset('img/logo.svg') }}" alt="Series!"></a></h1>
     {% include('inc/nav.html.twig') %}
-
 </header>
 
 <main>
@@ -20,6 +21,7 @@
 
     {% endblock %}
 </footer>
+</div>
 
 
 </body>
