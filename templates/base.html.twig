@@ -15,9 +15,9 @@
 
 <footer>
     {% block footer %}
-    <div>
-        &copy; Series!{{ "now"|date("Y") }}
-    </div>
+
+        {% include('inc/footer.html.twig') %}
+
     {% endblock %}
 </footer>
 
