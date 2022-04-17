@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    <h2>{{ serie.name }}</h2> | {{ parent() }}
+    {{ serie.name }} | {{ parent() }}
 {% endblock %}
 
 {% block body %}
@@ -18,7 +18,7 @@
             <div>Aired from {{ serie.firstAirDate|date("Y-m-d") }} to {{ serie.lastAirDate|date("Y-m-d") }}</div>
             <div>{{ serie.overview|nl2br }}</div>
 
-             <section class="seasons">
+            <section class="seasons">
                 <h3>Seasons</h3>
                 {% for season in serie.seasons %}
                     <article>
@@ -36,13 +36,11 @@
     </div>
 {% endblock %}
 
+
 {% block extrastyles %}
     <style>
         body {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("{{ asset('img/backdrop/' ~ serie.backdrop) }}");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("{{ asset('img/backdrops/' ~ serie.backdrop) }}");
         }
     </style>
 {% endblock %}
-
-
-

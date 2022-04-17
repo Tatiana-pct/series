@@ -29,13 +29,19 @@ class SerieController extends AbstractController
     }
 
     /**
+    /**
      * @Route("/details/{id}", name="details")
      */
     public function details(int $id, SerieRepository $serieRepository): Response
     {
-        $serie= $serieRepository->find($id);
+        $serie = $serieRepository->find($id);
+
+        if (!$serie){
+            throw $this->createNotFoundException('oh no!!!');
+        }
+
         return $this->render('serie/details.html.twig', [
-            "serie" =>$serie
+            "serie" => $serie
         ]);
     }
 

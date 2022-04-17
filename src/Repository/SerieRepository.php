@@ -94,8 +94,8 @@ class SerieRepository extends ServiceEntityRepository
 
         //version QueryBuilder
         $queryBuilder = $this->createQueryBuilder('s');
-        //$queryBuilder->leftJoin('s.seasons', 'seas')
-         //   ->addSelect('seas');
+        $queryBuilder->leftJoin('s.seasons', 'seas')
+            ->addSelect('seas');
 
         $queryBuilder->andWhere('s.popularity > 100');
         $queryBuilder->andWhere('s.vote > 8');
