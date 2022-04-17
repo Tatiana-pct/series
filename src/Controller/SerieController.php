@@ -61,7 +61,7 @@ class SerieController extends AbstractController
 
         $serieForm->handleRequest($request);
 
-        //verification de la validation du formulaire
+        //verification de la validation du formulaire de creation de saison
         if ($serieForm->isSubmitted() && $serieForm->isValid()){
             $entityManager->persist($serie);
             $entityManager->flush();
